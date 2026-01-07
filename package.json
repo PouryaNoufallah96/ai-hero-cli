@@ -18,11 +18,11 @@
     "directory": "dist"
   },
   "scripts": {
-    "build": "tsup && pnpm copy-package-json",
+    "build": "node api.js && tsup && pnpm copy-package-json",
     "build:ts": "tsup",
     "clean": "rimraf dist/*",
     "check": "tsc -b tsconfig.json",
-    "dev": "vitest",
+    "dev": "node api.js && vitest",
     "lint": "eslint \"**/{src,test,examples,scripts,dtslint}/**/*.{ts,mjs}\"",
     "lint-fix": "pnpm lint --fix",
     "typecheck": "tsc -b --noEmit",
